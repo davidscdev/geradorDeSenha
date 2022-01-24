@@ -1,8 +1,45 @@
+/* Captura os elemtnos da configuração em tela. */
+const elResultado = document.getElementById('resultado');
+const elTamanho = document.getElementById('tamanho');
+const elMaiusculas = document.getElementById('maiusculas');
+const elMinusculas = document.getElementById('minusculas');
+const elNumeros = document.getElementById('numeros');
+const elSimbolos = document.getElementById('simbolos');
+const elGerador = document.getElementById('gerador');
+const elCopiar = document.getElementById('copiar');
+
 const randomFunc = {
     minuscula: getMinusculaRand,
     maiuscula: getMaiusculaRand,
     numero: getNumeralRand,
     simbolo: getSimboloRand
+}
+
+
+elGerador.addEventListener('click', () => {
+    const tamanho = +elTamanho.value;
+    const temMaiusculo = elMaiusculas.checked;
+    const temMinusculo = elMinusculas.checked;
+    const temNumero = elNumeros.checked;
+    const temSimbolo = elSimbolos.checked;
+
+    elResultado.innerText = geraPassword(tamanho, temMaiusculo, temMinusculo, temNumero, temSimbolo);
+})
+
+function geraPassword(tamanho, Maiusculo, Minusculo, Numero, Simbolo){
+    let senhaGerada = '';
+    const contarTipos = Maiusculo + Minusculo + Numero + Simbolo;
+
+    const arrayTipos = [{Maiusculo}, {Minusculo}, {Numero}, {Simbolo}].filter(item => Object.values(item)[0]);
+
+    if (contarTipos === 0) {
+        return '';
+    }
+
+    for (let i = 0; i < tamanho; i += contarTipos) {
+        const element = array[i];
+        
+    }
 }
 
 function getMinusculaRand(){
