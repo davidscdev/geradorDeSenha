@@ -9,6 +9,41 @@
     <title>Gerador de Senhas</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Gerador de Senha</h2>
+        <div class="container-resultado">
+            <span id="resultado"></span>
+            <button class="btn" id="copiar">
+                <i class="far fa-clipboard"></i>
+            </button>
+        </div>
+        <div class="configuracoes">
+            <div class="configuracao">
+                <label for="tamanho">Tamanho da Senha:</label>
+                <input type="number" name="tamanho" id="tamanho" min="4" max="20" value="20">
+            </div>
+            <div class="configuracao">
+                <label for="maiusculas">Letras Maiúsculas</label>
+                <input type="checkbox" name="maisuculas" id="maiusculas" checked>
+            </div>
+            <div class="configuracao">
+                <label for="minusculas">Letras Minúsculas</label>
+                <input type="checkbox" name="minusculas" id="minusculas" checked>
+            </div>
+            <div class="configuracao">
+                <label for="numeros">Números</label>
+                <input type="checkbox" name="numeros" id="numeros" checked>
+            </div>
+            <div class="configuracao">
+                <label for="simbolos">Simbolos</label>
+                <input type="checkbox" name="simbolos" id="simbolos" checked>
+            </div>
+        </div>
+        <button class="btn btn-grande" id="gerador">
+            Gerar Senha
+        </button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
