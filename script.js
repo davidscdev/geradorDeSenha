@@ -9,10 +9,10 @@ const elGerador = document.getElementById('gerador');
 const elCopiar = document.getElementById('copiar');
 
 const randomFunc = {
-    minuscula: getMinusculaRand,
-    maiuscula: getMaiusculaRand,
-    numero: getNumeralRand,
-    simbolo: getSimboloRand
+    Minusculo: getMinusculaRand,
+    Maiusculo: getMaiusculaRand,
+    Numero: getNumeralRand,
+    Simbolo: getSimboloRand
 }
 
 
@@ -37,9 +37,15 @@ function geraPassword(tamanho, Maiusculo, Minusculo, Numero, Simbolo){
     }
 
     for (let i = 0; i < tamanho; i += contarTipos) {
-        const element = array[i];
-        
+        arrayTipos.forEach(tipo => {
+            const funcTipo = Object.keys(tipo)[0];
+            console.log(funcTipo);
+            senhaGerada += randomFunc[funcTipo]();
+        })
     }
+    const senhaFinal = senhaGerada.slice(0, tamanho);
+
+    return senhaFinal;
 }
 
 function getMinusculaRand(){
@@ -62,4 +68,4 @@ function getSimboloRand() {
     return symbols[Math.floor(Math.random() * symbols.length)];    
 }
 
-console.log(getSimboloRand());
+/*console.log(getSimboloRand());*/
