@@ -15,6 +15,21 @@ const randomFunc = {
     Simbolo: getSimboloRand
 }
 
+elCopiar.addEventListener('click', () => {
+    const textarea = document.createElement('textarea');
+    const senha = elResultado.innerText;
+
+    if (!senha) {
+        return;
+    }
+
+    textarea.value = senha;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert(`Senha copiada para a área de transferência: ${senha}`);
+})
 
 elGerador.addEventListener('click', () => {
     const tamanho = +elTamanho.value;
